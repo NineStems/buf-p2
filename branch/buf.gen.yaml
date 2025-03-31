@@ -23,7 +23,7 @@ plugins:
 inputs:
   # Git repository
   - git_repo: https://github.com/NineStems/buf-p1
-    branch: master@v1.0.1
+    branch: master
     subdir: source/0_generate/proto
     #paths:
     #  - acme/manager/v1
