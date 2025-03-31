@@ -1,0 +1,9 @@
+version: v2
+deps:
+  - git://github.com/NineStems/buf-p1?tag=v1.0.0#subdir=source/0_generate/proto
+lint:
+  use:
+    - STANDARD
+breaking:
+  use:
+    - FILE

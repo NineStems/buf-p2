@@ -1,0 +1,23 @@
+version: v2
+clean: true
+managed:
+  enabled: true
+  disable:
+    - module: buf.build/googleapis/googleapis
+  override:
+    - file_option: go_package_prefix
+      value: buf-p2/internal/controller/grpc/proto
+plugins:
+  - local: protoc-gen-go
+    out: internal/controller/grpc/proto
+    opt: paths=source_relative
+  ### classic bin for proto service generate
+  - local: protoc-gen-go-grpc
+    out: internal/controller/grpc/proto
+    opt: paths=source_relative
+inputs:
+  # Git repository
+  - git_repo: https://github.com/NineStems/buf-p1
+    tag: v1.0.0
+    subdir: source/0_generate/proto
+    depth: 30

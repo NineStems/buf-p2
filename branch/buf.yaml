@@ -1,0 +1,20 @@
+# For details on buf.yaml configuration, visit https://buf.build/docs/configuration/v2/buf-yaml
+version: v2
+### got extra deps
+deps:
+  - buf.build/grpc-ecosystem/grpc-gateway
+  - buf.build/googleapis/googleapis
+inputs:
+  # Git repository
+  - git_repo: https://github.com/NineStems/buf-p1
+    branch: master@v1.0.1
+    subdir: source/0_generate/proto
+    #paths:
+    #  - source/0_generate/proto
+    depth: 30
+lint:
+  use:
+    - STANDARD
+breaking:
+  use:
+    - FILE
